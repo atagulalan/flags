@@ -1,14 +1,11 @@
 import { useState, useCallback, useEffect } from 'react'
-import { GameState, Question, GameMode, Country } from '@/types'
+import { GameState, Question } from '@/types'
 import {
-  getRandomCountry,
   getRandomCountries,
   getCountriesByLevel,
   getAllCountries
 } from '@/data/countries'
 import { playSuccessSound, playErrorSound } from '@/lib/sounds'
-
-const GAME_MODES: GameMode[] = ['multiple-choice', 'type-answer', 'select-flag']
 
 const STORAGE_KEY = 'countryFlags_gameState'
 const CONFIDENCE_DECAY_RATE = 0.1 // Weight reduction per position beyond recent answers
