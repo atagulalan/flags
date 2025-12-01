@@ -1,0 +1,240 @@
+import { Country } from '@/types'
+
+// Level 1: Top 20 most known countries
+const level1: Country[] = [
+  { code: 'US', level: 1 },
+  { code: 'GB', level: 1 },
+  { code: 'FR', level: 1 },
+  { code: 'DE', level: 1 },
+  { code: 'IT', level: 1 },
+  { code: 'ES', level: 1 },
+  { code: 'CA', level: 1 },
+  { code: 'AU', level: 1 },
+  { code: 'JP', level: 1 },
+  { code: 'CN', level: 1 },
+  { code: 'BR', level: 1 },
+  { code: 'IN', level: 1 },
+  { code: 'RU', level: 1 },
+  { code: 'MX', level: 1 },
+  { code: 'NL', level: 1 },
+  { code: 'SE', level: 1 },
+  { code: 'CH', level: 1 },
+  { code: 'BE', level: 1 },
+  { code: 'GR', level: 1 },
+  { code: 'PT', level: 1 }
+]
+
+// Level 2: Top 50 (add 30 more)
+const level2: Country[] = [
+  ...level1,
+  { code: 'AR', level: 2 },
+  { code: 'PL', level: 2 },
+  { code: 'TR', level: 2 },
+  { code: 'KR', level: 2 },
+  { code: 'EG', level: 2 },
+  { code: 'SA', level: 2 },
+  { code: 'NO', level: 2 },
+  { code: 'DK', level: 2 },
+  { code: 'FI', level: 2 },
+  { code: 'IE', level: 2 },
+  { code: 'NZ', level: 2 },
+  { code: 'AT', level: 2 },
+  { code: 'CZ', level: 2 },
+  { code: 'HU', level: 2 },
+  { code: 'RO', level: 2 },
+  { code: 'CL', level: 2 },
+  { code: 'CO', level: 2 },
+  { code: 'PE', level: 2 },
+  { code: 'VE', level: 2 },
+  { code: 'ZA', level: 2 },
+  { code: 'TH', level: 2 },
+  { code: 'VN', level: 2 },
+  { code: 'ID', level: 2 },
+  { code: 'MY', level: 2 },
+  { code: 'SG', level: 2 },
+  { code: 'PH', level: 2 },
+  { code: 'IL', level: 2 },
+  { code: 'AE', level: 2 },
+  { code: 'IS', level: 2 },
+  { code: 'LU', level: 2 }
+]
+
+// Level 3: Top 100 (add 50 more)
+const level3: Country[] = [
+  ...level2,
+  { code: 'BG', level: 3 },
+  { code: 'HR', level: 3 },
+  { code: 'SK', level: 3 },
+  { code: 'SI', level: 3 },
+  { code: 'EE', level: 3 },
+  { code: 'LV', level: 3 },
+  { code: 'LT', level: 3 },
+  { code: 'UA', level: 3 },
+  { code: 'BY', level: 3 },
+  { code: 'RS', level: 3 },
+  { code: 'BA', level: 3 },
+  { code: 'MK', level: 3 },
+  { code: 'AL', level: 3 },
+  { code: 'ME', level: 3 },
+  { code: 'XK', level: 3 },
+  { code: 'UY', level: 3 },
+  { code: 'PY', level: 3 },
+  { code: 'BO', level: 3 },
+  { code: 'EC', level: 3 },
+  { code: 'CR', level: 3 },
+  { code: 'PA', level: 3 },
+  { code: 'GT', level: 3 },
+  { code: 'HN', level: 3 },
+  { code: 'SV', level: 3 },
+  { code: 'NI', level: 3 },
+  { code: 'DO', level: 3 },
+  { code: 'CU', level: 3 },
+  { code: 'JM', level: 3 },
+  { code: 'TT', level: 3 },
+  { code: 'BD', level: 3 },
+  { code: 'PK', level: 3 },
+  { code: 'LK', level: 3 },
+  { code: 'MM', level: 3 },
+  { code: 'KH', level: 3 },
+  { code: 'LA', level: 3 },
+  { code: 'BN', level: 3 },
+  { code: 'TW', level: 3 },
+  { code: 'HK', level: 3 },
+  { code: 'MO', level: 3 },
+  { code: 'IQ', level: 3 },
+  { code: 'IR', level: 3 },
+  { code: 'JO', level: 3 },
+  { code: 'LB', level: 3 },
+  { code: 'SY', level: 3 },
+  { code: 'KW', level: 3 },
+  { code: 'QA', level: 3 },
+  { code: 'BH', level: 3 },
+  { code: 'OM', level: 3 },
+  { code: 'YE', level: 3 },
+  { code: 'MA', level: 3 },
+  { code: 'DZ', level: 3 }
+]
+
+// Level 4: All remaining countries
+const level4: Country[] = [
+  ...level3,
+  { code: 'TN', level: 4 },
+  { code: 'LY', level: 4 },
+  { code: 'SD', level: 4 },
+  { code: 'ET', level: 4 },
+  { code: 'KE', level: 4 },
+  { code: 'TZ', level: 4 },
+  { code: 'UG', level: 4 },
+  { code: 'GH', level: 4 },
+  { code: 'NG', level: 4 },
+  { code: 'CM', level: 4 },
+  { code: 'SN', level: 4 },
+  { code: 'CI', level: 4 },
+  { code: 'ML', level: 4 },
+  { code: 'BF', level: 4 },
+  { code: 'NE', level: 4 },
+  { code: 'TD', level: 4 },
+  { code: 'CF', level: 4 },
+  { code: 'CD', level: 4 },
+  { code: 'CG', level: 4 },
+  { code: 'GA', level: 4 },
+  { code: 'GQ', level: 4 },
+  { code: 'ST', level: 4 },
+  { code: 'AO', level: 4 },
+  { code: 'ZM', level: 4 },
+  { code: 'ZW', level: 4 },
+  { code: 'BW', level: 4 },
+  { code: 'NA', level: 4 },
+  { code: 'SZ', level: 4 },
+  { code: 'LS', level: 4 },
+  { code: 'MW', level: 4 },
+  { code: 'MZ', level: 4 },
+  { code: 'MG', level: 4 },
+  { code: 'MU', level: 4 },
+  { code: 'SC', level: 4 },
+  { code: 'KM', level: 4 },
+  { code: 'DJ', level: 4 },
+  { code: 'ER', level: 4 },
+  { code: 'SO', level: 4 },
+  { code: 'RW', level: 4 },
+  { code: 'BI', level: 4 },
+  { code: 'SS', level: 4 },
+  { code: 'AF', level: 4 },
+  { code: 'KZ', level: 4 },
+  { code: 'UZ', level: 4 },
+  { code: 'TM', level: 4 },
+  { code: 'TJ', level: 4 },
+  { code: 'KG', level: 4 },
+  { code: 'MN', level: 4 },
+  { code: 'KP', level: 4 },
+  { code: 'AM', level: 4 },
+  { code: 'AZ', level: 4 },
+  { code: 'GE', level: 4 },
+  { code: 'MD', level: 4 },
+  { code: 'MT', level: 4 },
+  { code: 'CY', level: 4 },
+  { code: 'AD', level: 4 },
+  { code: 'MC', level: 4 },
+  { code: 'SM', level: 4 },
+  { code: 'VA', level: 4 },
+  { code: 'LI', level: 4 },
+  { code: 'BS', level: 4 },
+  { code: 'BB', level: 4 },
+  { code: 'AG', level: 4 },
+  { code: 'DM', level: 4 },
+  { code: 'GD', level: 4 },
+  { code: 'LC', level: 4 },
+  { code: 'VC', level: 4 },
+  { code: 'KN', level: 4 },
+  { code: 'BZ', level: 4 },
+  { code: 'GY', level: 4 },
+  { code: 'SR', level: 4 },
+  { code: 'GF', level: 4 },
+  { code: 'FK', level: 4 },
+  { code: 'GS', level: 4 },
+  { code: 'FJ', level: 4 },
+  { code: 'PG', level: 4 },
+  { code: 'SB', level: 4 },
+  { code: 'VU', level: 4 },
+  { code: 'NC', level: 4 },
+  { code: 'PF', level: 4 },
+  { code: 'WS', level: 4 },
+  { code: 'TO', level: 4 },
+  { code: 'KI', level: 4 },
+  { code: 'TV', level: 4 },
+  { code: 'NR', level: 4 },
+  { code: 'PW', level: 4 },
+  { code: 'FM', level: 4 },
+  { code: 'MH', level: 4 },
+  { code: 'BT', level: 4 },
+  { code: 'NP', level: 4 },
+  { code: 'MV', level: 4 },
+  { code: 'TL', level: 4 }
+]
+
+// Remove duplicates and export
+const allCountries: Country[] = Array.from(
+  new Map(level4.map((country) => [country.code, country])).values()
+)
+
+export const getCountriesByLevel = (level: number): Country[] => {
+  return allCountries.filter((country) => country.level === level)
+}
+
+export const getAllCountries = (): Country[] => {
+  return allCountries
+}
+
+export const getRandomCountry = (level: number): Country => {
+  const countries = getCountriesByLevel(level)
+  return countries[Math.floor(Math.random() * countries.length)]
+}
+
+export const getRandomCountries = (
+  count: number,
+  exclude?: string
+): Country[] => {
+  const available = allCountries.filter((c) => c.code !== exclude)
+  const shuffled = [...available].sort(() => 0.5 - Math.random())
+  return shuffled.slice(0, count)
+}
