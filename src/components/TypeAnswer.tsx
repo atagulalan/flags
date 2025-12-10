@@ -62,11 +62,31 @@ export const TypeAnswer = ({
     }
   }, [answer, feedback, allCountryNames])
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    if (feedback !== null || !answer.trim()) return
+  const correctAnswer = useMemo(
+    () => t('countries.' + question.country.code),
+    [t, question.country.code]
+  )
+
+  const checkAndSubmit = () => {
+    if (feedback !== null || !answer.trim()) return false
+
+    // Check if answer exactly matches (case-insensitive, trimmed)
+    const normalizedAnswer = answer.toLowerCase().trim()
+    const normalizedCorrect = correctAnswer.toLowerCase().trim()
+
+    if (normalizedAnswer !== normalizedCorrect) {
+      // Answer doesn't match exactly, don't submit
+      return false
+    }
+
     onSubmit(answer)
     setShowSuggestions(false)
+    return true
+  }
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    checkAndSubmit()
   }
 
   const handleSuggestionClick = (suggestion: string) => {
@@ -76,6 +96,19 @@ export const TypeAnswer = ({
   }
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Enter') {
+      if (showSuggestions && suggestions.length > 0 && selectedIndex >= 0) {
+        // If a suggestion is selected, use it
+        e.preventDefault()
+        handleSuggestionClick(suggestions[selectedIndex])
+      } else {
+        // Otherwise, submit the form if answer matches exactly
+        e.preventDefault()
+        checkAndSubmit()
+      }
+      return
+    }
+
     if (!showSuggestions || suggestions.length === 0) return
 
     if (e.key === 'ArrowDown') {
@@ -86,9 +119,6 @@ export const TypeAnswer = ({
     } else if (e.key === 'ArrowUp') {
       e.preventDefault()
       setSelectedIndex((prev) => (prev > 0 ? prev - 1 : -1))
-    } else if (e.key === 'Enter' && selectedIndex >= 0) {
-      e.preventDefault()
-      handleSuggestionClick(suggestions[selectedIndex])
     } else if (e.key === 'Escape') {
       setShowSuggestions(false)
     }
@@ -158,7 +188,9 @@ export const TypeAnswer = ({
           type="submit"
           disabled={feedback !== null || !answer.trim()}
           className={`w-full h-12 text-lg ${
-            feedback === 'correct' ? 'bg-green-600 hover:bg-green-600' : ''
+            feedback === 'correct'
+              ? 'bg-green-600 hover:bg-green-600 text-white'
+              : ''
           }`}
         >
           {t('game.submitAnswer')}

@@ -70,9 +70,9 @@ export const SelectFlag = ({
               variant="outline"
               className={`${flagButtonSizeClasses[flagSize]} p-2 ${
                 isCorrect || showCorrect
-                  ? 'bg-green-600 hover:bg-green-600 border-green-700'
+                  ? 'bg-green-600 hover:bg-green-600 border-green-700 text-white'
                   : showWrong
-                  ? 'bg-red-600 hover:bg-red-600 border-red-700'
+                  ? 'bg-red-600 hover:bg-red-600 border-red-700 text-white'
                   : ''
               }`}
             >
